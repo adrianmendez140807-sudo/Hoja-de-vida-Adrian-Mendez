@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- animación de fondo de partículas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="container">
+        <!-- Encabezado / Perfil Basico -->
+        <header class="main-header">
+            <div class="profile-title">
+                <h1>Adrián Alexander Méndez Chamorro</h1>
+                <p class="subtitle">Estudiante de Estadística, Desarrollador Junior de Software y Manejo de Datos & Tecnico de Sistemas Teleinformáticos</p>
+                <div class="glowing-line"></div>
+            </div>
+        </header>
+
+        <div class="content-grid">
+            <!-- Sección Izquierda: Info de Contacto y Habilidades -->
+            <aside class="sidebar">
+                <section class="card section-fade delay-1">
+                    <h2>Contacto</h2>
+                    <ul class="contact-list">
+                        <li><span class="icon">📍</span> Medellín, Colombia</li>
+                        <li><span class="icon">📧</span> <a href="mailto:tu.email@email.com">adrianmendez140807@gmail.com</a></li>
+                        <li><span class="icon">📱</span> +57 301 4536030</li>
+                        <li><span class="icon">💻</span> <a href="https://github.com/adrianmendez140807-sudo" target="_blank">GitHub Portafolio</a></li>
+                        <li><span class="icon">👔</span> <a href="https://linkedin.com" target="_blank">LinkedIn Perfil</a></li>
+                    </ul>
+                </section>
+
+                <section class="card section-fade delay-2">
+                    <h2>Habilidades Técnicas</h2>
+                    <div class="skills-container">
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Python (Pandas, NumPy)</span></div>
+                            <div class="progress-bar"><div class="progress" style="width: 100%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Análisis Estadístico & R</span></div>
+                            <div class="progress-bar"><div class="progress" style="width: 100%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>SQL & Bases de Datos</span></div>
+                            <div class="progress-bar"><div class="progress" style="width: 100%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>HTML5 / CSS3 / JavaScript</span></div>
+                            <div class="progress-bar"><div class="progress" style="width: 100%"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info"><span>Git / Control de Versiones</span></div>
+                            <div class="progress-bar"><div class="progress" style="width: 100%"></div></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card section-fade delay-3">
+                    <h2>Idiomas</h2>
+                    <div class="language-item">
+                        <span>Español</span>
+                        <span class="badge">Nativo</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Inglés</span>
+                        <span class="badge class-advance">Intermedio (B)</span>
+                    </div>
+                </section>
+            </aside>
+
+            <!-- Sección Derecha: Perfil, Proyectos y Educación -->
+            <main class="main-content">
+                <section class="card section-fade delay-1">
+                    <h2>Perfil Profesional</h2>
+                    <p class="profile-text">
+                        Estudiante de Estadística con un fuerte enfoque en el manejo automatizado de datos, analítica predictiva y programación orientada a objetos y a la resolución de problemas empresariales. Apasionado por la intersección entre el modelado matemático y el desarrollo de software y software interactivo. Experto en estructurar repositorios limpios y documentados. Busco aportar soluciones analíticas de alto impacto mediante la transformación de datos en ventajas competitivas.
+                    </p>
+                </section>
+
+                <section class="card section-fade delay-2">
+                    <h2>Proyectos Destacados (GitHub)</h2>
+                    
+                    <a href="https://github.com" target="_blank" class="project-link-wrapper">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h3>📊 Análisis Estadístico y Limpieza de Datasets</h3>
+                                <span class="project-tech">Python / Pandas / Jupyter</span>
+                            </div>
+                            <p>Desarrollo de un pipeline de ETL automatizado para la limpieza e imputación de datos estadísticos de consumo masivo. Aplicación de pruebas de hipótesis y visualizaciones dinámicas exportadas a formato web.</p>
+                            <span class="btn-link">Ver Código en GitHub →</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com" target="_blank" class="project-link-wrapper">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h3>📉 Modelado Predictivo e Inferencia</h3>
+                                <span class="project-tech">R / RStudio / Git</span>
+                            </div>
+                            <p>Construcción y validación de modelos de regresión multivariada para la proyección de variables económicas. Inclusión de análisis de residuos y control de versiones estricto para reproducibilidad científica.</p>
+                            <span class="btn-link">Ver Repositorio →</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com" target="_blank" class="project-link-wrapper">
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h3>🗄️ Arquitectura de Consultas Complejas</h3>
+                                <span class="project-tech">SQL / PostgreSQL</span>
+                            </div>
+                            <p>Diseño y optimización de bases de datos relacionales orientadas al almacenamiento de reportes académicos, implementando llaves, disparadores y vistas optimizadas.</p>
+                            <span class="btn-link">Ver Consultas →</span>
+                        </div>
+                    </a>
+                </section>
+
+                <section class="card section-fade delay-3">
+                    <h2>Educación</h2>
+                    <div class="education-item">
+                        <div class="edu-meta">
+                            <h3>Pregrado en Estadística / Ciencias de Datos</h3>
+                            <span class="date">En Curso</span>
+                        </div>
+                        <p class="institution">Universidad Nacional de Colombia</p>
+                        <p class="edu-details">Énfasis en computación estadística, análisis multivariado, optimización numérica y minería de datos.</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

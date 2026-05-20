@@ -1,0 +1,325 @@
+/* Estilos Base y Variables de Diseño Futurista/Tech */
+:root {
+    --bg-dark: #030712;
+    --card-bg: rgba(15, 23, 42, 0.75);
+    --border-color: rgba(56, 189, 248, 0.2);
+    --border-hover: rgba(56, 189, 248, 0.6);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-cyan: #38bdf8;
+    --accent-emerald: #34d399;
+    --glow-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+    --glow-hover: 0 0 30px rgba(56, 189, 248, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Canvas de Animación de Fondo */
+#bg-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Contenedor Principal */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Encabezado */
+.main-header {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(3, 7, 18, 0.9));
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: var(--glow-shadow);
+    backdrop-filter: blur(8px);
+}
+
+.profile-title h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.profile-title .subtitle {
+    font-size: 1.2rem;
+    color: var(--accent-cyan);
+    font-weight: 500;
+}
+
+.glowing-line {
+    height: 3px;
+    width: 100px;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-emerald));
+    margin-top: 15px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--accent-cyan);
+}
+
+/* Distribución Grid Responsive */
+.content-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.sidebar {
+    flex: 1 1 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.main-content {
+    flex: 2 1 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Tarjetas Reutilizables */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px;
+    backdrop-filter: blur(12px);
+    box-shadow: var(--glow-shadow);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-cyan);
+    box-shadow: var(--glow-hover);
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-cyan);
+}
+
+/* Listas y Contacto */
+.contact-list {
+    list-style: none;
+}
+
+.contact-list li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+}
+
+.contact-list .icon {
+    margin-right: 12px;
+}
+
+.contact-list a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    color: var(--accent-cyan);
+}
+
+/* Barras de Progreso */
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    width: 100%;
+}
+
+.progress-bar {
+    background-color: rgba(255, 255, 255, 0.05);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-emerald));
+    height: 100%;
+    border-radius: 4px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: loadProgress 1.5s cubic-bezier(0.1, 1, 0.1, 1) forwards;
+    animation-delay: 0.5s;
+}
+
+/* Badges e Idiomas */
+.language-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.badge {
+    background-color: rgba(52, 211, 153, 0.1);
+    border: 1px solid var(--accent-emerald);
+    color: var(--accent-emerald);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.badge.class-advance {
+    background-color: rgba(56, 189, 248, 0.1);
+    border: 1px solid var(--accent-cyan);
+    color: var(--accent-cyan);
+}
+
+.profile-text {
+    color: var(--text-secondary);
+    text-align: justify;
+}
+
+/* Tarjetas de Proyectos */
+.project-link-wrapper {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.project-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-link-wrapper:hover .project-card {
+    background-color: rgba(56, 189, 248, 0.04);
+    border-color: rgba(56, 189, 248, 0.4);
+    transform: scale(1.015);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.project-tech {
+    font-size: 0.8rem;
+    background-color: rgba(255,255,255,0.07);
+    padding: 4px 10px;
+    border-radius: 6px;
+    color: var(--accent-cyan);
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.btn-link {
+    color: var(--accent-cyan);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Educación */
+.edu-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.institution {
+    color: var(--accent-cyan);
+    font-weight: 500;
+}
+
+.edu-details {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* --- ANIMACIONES CSS PURAS (MÁS SEGURAS) --- */
+@keyframes loadProgress {
+    to { transform: scaleX(1); }
+}
+
+.section-fade {
+    opacity: 0;
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Retrasos controlados puramente por CSS para evitar conflictos de JavaScript */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.25s; }
+.delay-3 { animation-delay: 0.4s; }
+
+@media (max-width: 768px) {
+    .content-grid { flex-direction: column; }
+    .main-header { padding: 25px; text-align: center; }
+    .project-header, .edu-meta { flex-direction: column; align-items: flex-start; gap: 5px; }
+}
